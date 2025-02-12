@@ -1,45 +1,49 @@
+/* General styles */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    margin: 0;
-}
-
-.todo-list {
-    background-color: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 300px;
+    background-color: #fff;
+    color: #333; /* Default text color for light mode */
 }
 
 h1 {
     text-align: center;
-    font-size: 24px;
+}
+
+.todo-list {
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    color: #333; /* Default text color for light mode */
 }
 
 input[type="text"] {
-    width: calc(100% - 110px);
-    padding: 8px;
-    margin-right: 10px;
+    width: 80%;
+    padding: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
+    margin-right: 10px;
 }
 
-button.addBtn {
-    padding: 8px 16px;
-    background-color: #007BFF;
-    color: white;
+button {
+    margin-top: 10px    ;
+    padding: 10px;
     border: none;
+    background-color: #4CAF50;
+    color: white;
     border-radius: 4px;
     cursor: pointer;
 }
 
-button.addBtn:hover {
-    background-color: #0056b3;
+button:hover {
+    background-color: #45a049;
 }
 
 ul.tasks {
@@ -50,21 +54,78 @@ ul.tasks {
 ul.tasks li {
     display: flex;
     align-items: center;
-    margin: 10px 0;
+    justify-content: space-between;
+    margin-bottom: 10px;
 }
 
-ul.tasks li span {
-    flex-grow: 1;
-    margin-left: 10px;
-}
-
-.line-through span {
+ul.tasks li .line-through span {
     text-decoration: line-through;
-    color: #aaa;
+    color: #888;
 }
 
-input[type="checkbox"] {
-    width: 20px;
-    height: 20px;
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: #121212;
+    color: #eaeaea; /* White text for dark mode */
+}
+
+.todo-list.dark-mode {
+    background-color: #333;
+    color: #eaeaea; /* White text for dark mode */
+}
+
+input[type="text"].dark-mode {
+    background-color: #555;
+    color: #eaeaea; /* White text for dark mode */
+    border-color: #777;
+}
+
+button.dark-mode {
+    background-color: #555;
+    color: #fff;
+}
+
+/* Theme toggle buttons */
+.theme-toggle {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.darkBtn, .lightBtn {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
     cursor: pointer;
+    background-color: #fff;
+    color: #333;
+}
+
+.darkBtn {
+    display: inline;
+}
+
+.lightBtn {
+    display: none;
+}
+
+/* Light Mode Styles */
+body:not(.dark-mode) {
+    background-color: #fff;
+    color: #333; /* Black text for light mode */
+}
+
+.todo-list:not(.dark-mode) {
+    background-color: #f4f4f4;
+    color: #333; /* Black text for light mode */
+}
+
+input[type="text"]:not(.dark-mode) {
+    background-color: #fff;
+    color: #333; /* Black text for light mode */
+    border-color: #ccc;
+}
+
+.form-dark {
+    background-color: #a48f8f !important;
 }
